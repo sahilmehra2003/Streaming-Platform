@@ -2,7 +2,7 @@ import { Schema,model } from "mongoose";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
-dotenv.config()
+dotenv.config( )
 const userSchema=new Schema({
     userName:{
         type:String,

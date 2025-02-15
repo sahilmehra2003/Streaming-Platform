@@ -1,5 +1,6 @@
 import express from "express"
 import dbConnect from "./config/database.js "
+import { cloudinaryConnect } from "./config/cloudinary";
 const app=express()
 // require('dotenv').config({path:'./env'}); // one way-> but this way takes away consistency of code
 // we can use improved version
@@ -18,3 +19,5 @@ dbConnect()
 .catch((err)=>{
     console.log("MongoDB connection failed !!",err);
 })
+// connecting to cloudinary
+cloudinaryConnect();
