@@ -3,7 +3,7 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const uploadOnCloudinary=async(localFilePath,{name,folder,height,quality})=>{
+const uploadOnCloudinary=async(localFilePath,name,quality,height)=>{
      try {
         if (!localFilePath) {
             throw new Error("couldn't find local path")
@@ -13,7 +13,7 @@ const uploadOnCloudinary=async(localFilePath,{name,folder,height,quality})=>{
        const options={
          resource_type:"auto",
          overwrite:false,
-         ...(folder && {folder}),
+         folder:"Streaming Platform",
          ...(name && {public_id:name}),
          ...(height && {height}),
          ...(quality && {quality}),
